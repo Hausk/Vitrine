@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Vitrine
 
-## Getting Started
+Le développement de ce projet est à but non lucratif pour moi.
+C'est un site vitrine que je créer pour un site photo
 
-First, run the development server:
+Ce site comprendra :
+
+- Une page d'accueil.
+- Une liste des catégories.
+- Une liste d'images liées à chaque catégorie.
+- Un tableau de bord permettant d'uploader des images et de gérer les catégories.
+
+## Pour commencer
+
+Pour lancer un serveur de développement, j'utiliserai d'abord la commande suivante :
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Bien que Bun et Pnpm soient intéressants, ils ne prennent pas en compte toutes les bibliothèques. De plus, cela ne me permettra pas de m'habituer aux bonnes pratiques.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Cette commande ouvre un serveur local par défault sur le port 3000
+[http://localhost:3000](http://localhost:3000).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Le projet utilise [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) pour automatiquement optimiser et charger Inter, une police custom de google.
 
-## Learn More
+## Tests
 
-To learn more about Next.js, take a look at the following resources:
+Il est essentiel de passer par le Linter pour vérifier la syntaxe, entre autres :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run lint`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Push
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+À chaque push, le projet effectue une construction (build) et pousse les modifications si tout est conforme.
