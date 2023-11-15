@@ -25,6 +25,12 @@ Cette commande ouvre un serveur local par défault sur le port 3000
 
 Le projet utilise [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) pour automatiquement optimiser et charger Inter, une police custom de google.
 
+Copier le .env.example en .env puis faire la commande :
+
+- `openssl rand -base64 32`
+
+Qui va générer une clé secrète à ajouter au *AUTH_SECRET*
+
 ## Tests
 
 Il est essentiel de passer par le Linter pour vérifier la syntaxe, entre autres :
