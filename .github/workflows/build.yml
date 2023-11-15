@@ -29,6 +29,8 @@ jobs:
 
       - name: Commit and push if successful
         run: |
+          git config --global user.email "hauskwar@ethifinance.com"
+          git config --global user.name "Hausk"
           git add .
           git diff-index --quiet HEAD || git commit -m "Build successful [skip ci]"
           git push
