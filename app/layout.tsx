@@ -1,10 +1,6 @@
 import type { Metadata } from 'next'
-import { Roboto_Slab } from 'next/font/google'
-import { Lato } from 'next/font/google'
+import { robotoslab, lato } from '@/app/ui/fonts';
 import './globals.css'
-
-const title = Roboto_Slab({ subsets: ['latin'] })
-const text = Lato({ subsets: ['latin'], weight: "400" })
 
 export const metadata: Metadata = {
   title: 'Libre & Vivant',
@@ -18,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={title.className}>{children}</body>
+      <body className={`${robotoslab.className} antialiased`}>{children}</body>
     </html>
   )
 }
