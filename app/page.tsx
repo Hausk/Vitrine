@@ -1,5 +1,10 @@
+import ServerUploadPage from "./ui/upload"
+
 export default function Home() {
   return (
-    <p>Homepage</p>
+    <main>
+      <p>Homepage</p>
+      <ServerUploadPage/>
+    </main>
   )
 }

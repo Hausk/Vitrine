@@ -11,29 +11,32 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String
+  id       String @id @default(cuid())
+  email    String @unique
+  name     String
   password String
-  works Work[]
-  images Image[]
+  works    Work[]
+  images   Image[]
 }
 
 model Work {
-  id        Int      @id @default(autoincrement())
-  title     String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  image     Image[] 
-  user      User     @relation(fields: [userId], references: [id])
-  userId    Int
+  id            String   @id @default(cuid())
+  title         String   
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  image         Image[] 
+  user          User     @relation(fields: [userId], references: [id])
+  userId        String
+  slug          String   @unique(sort: Desc)
 }
 
 model Image {
-  id         Int      @id @default(autoincrement())
-  uploadedAt DateTime @default(now())
-  work       Work     @relation(fields: [workId], references: [id])
-  workId     Int
-  user       User     @relation(fields: [userId], references: [id])
-  userId     Int
+  id          String   @id @default(cuid())
+  uploadedAt  DateTime @default(now())
+  path        String
+  work        Work     @relation(fields: [workId], references: [id])
+  workId      String
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
+  pinnedImage Boolean  @default(false)
 }
