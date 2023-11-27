@@ -4,6 +4,8 @@ import { join } from 'path';
 import { writeFile } from 'fs/promises';
 
 export async function upload(data: FormData) {
+  const workId = ''
+  const userId = data.get('userId') as string;
   const file: File | null = data.get('file') as unknown as File
   if (!file) {
     throw new Error('No file uploaded')
@@ -16,8 +18,8 @@ export async function upload(data: FormData) {
   await writeFile(pathToFile, buffer)
   await prisma.image.create({
     data: {
-      workId: 1,
-      userId: 1,
+      workId: '',
+      userId: '',
       path: '/images/' + file.name,
     }
   })

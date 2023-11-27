@@ -5,6 +5,7 @@ import prisma from "@/utils/prisma"
 export async function createWork(formData: FormData) {
     await prisma.work.create({
       data: {
+        slug: '' as string,
         title: formData.get('title') as string,
         userId: '1' as string,
       }
